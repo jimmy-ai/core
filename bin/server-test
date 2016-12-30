@@ -11,11 +11,13 @@ port = 2000
 server = TCPSocket.open(hostname, port)
 if ARGV.count > 0
   server.write(ARGV.join(" "))
+else
+  puts "You have to write something"
+  exit
 end
-server.write("\nSIGNAL")
 
 while line = server.gets
   puts line.chop
 end
 server.close
-exit 10
+exit

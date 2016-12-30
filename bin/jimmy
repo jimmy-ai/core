@@ -12,7 +12,7 @@ loop {
   connection = server.accept
   received = connection.recv(1024).strip
   time = Time.now.utc.to_i
-  #puts "Received: #{received}"
+  puts "Received > #{received}"
   connection.puts "now:#{time}"
   connection.puts "eval:jimmyReplace('abc', 'xyw')"
   connection.close
